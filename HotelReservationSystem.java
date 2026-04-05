@@ -30,13 +30,13 @@ public class HotelReservationSystem {
 
     private static void buildUI() {
         // ── FRAME ──────────────────────────────────────
-        frame = new JFrame("🏨 Hotel Reservation System");
+        frame = new JFrame("Hotel Reservation System");
         frame.setSize(900, 600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
 
         // ── TITLE ──────────────────────────────────────
-        JLabel title = new JLabel("🏨 Hotel Reservation System", SwingConstants.CENTER);
+        JLabel title = new JLabel("Hotel Reservation System", SwingConstants.CENTER);
         title.setFont(new Font("Arial", Font.BOLD, 22));
         title.setOpaque(true);
         title.setBackground(new Color(44, 62, 80));
@@ -51,7 +51,7 @@ public class HotelReservationSystem {
         sidebar.setBorder(BorderFactory.createEmptyBorder(20, 15, 20, 15));
         sidebar.setPreferredSize(new Dimension(160, 0));
 
-        String[] btnNames = {"➕ Reserve", "👁 View All", "✏️ Update", "🗑 Delete", "🔍 Search", "🚪 Exit"};
+        String[] btnNames = {"Reserve", "View All", "Update", "Delete", "Search", "Exit"};
         for (String name : btnNames) {
             JButton btn = new JButton(name);
             btn.setBackground(new Color(41, 128, 185));
@@ -198,7 +198,7 @@ public class HotelReservationSystem {
                         "DELETE FROM reservations WHERE reservation_id = ?");
                 ps.setInt(1, id);
                 ps.executeUpdate();
-                JOptionPane.showMessageDialog(frame, "✅ Deleted successfully!");
+                JOptionPane.showMessageDialog(frame, "Deleted successfully!");
                 viewReservations();
             }
         } catch (SQLException ex) {
